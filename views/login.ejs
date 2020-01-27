@@ -1,56 +1,142 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Iniciar Sesión</title>
-  </head>
-  <body>
-    <div class="container">
-        <br class="my-4">
-        <h1 class="display-4" style="text-align: center;">Interfaz Administrativa</h1>
-        <hr class="my-2">
-        <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                <div class="card card-signin my-5 shadow">
-                    <div class="card-body" style="box-shadow: rgba(0, 0, 0, 0.4);">
-                        <form class="form-signin" method="POST" action="/auth">
-                            <h5 class="card-title text-center">Iniciar Sesión</h5>
-                            <div class="form-label-group">
-                                <label for="inputEmail">Usuario | Correo:</label>
-                                <input required name="username" type="text" id="inputEmail" class="form-control" placeholder="Email">
-                            </div>
-                            <br class="my-6">
-                            <div class="form-label-group">
-                                <label for="inputPassword">Contraseña:</label>
-                                <input required name="password" type="password" id="inputPassword" class="form-control" placeholder="Password">
-                            </div>
-                            <br class="my-6">
-                            <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                            <label class="custom-control-label" for="customCheck1">Recordar contraseña</label>
-                            </div>
-                            <button class="btn btn-info btn-block"  type="submit">Iniciar Sesión</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-      </div>
-    </div>
-    <script>
-    function auth() {
-      const username = document.getElementById("inputEmail");
-      const password = document.getElementById("inputPassword");
+<head>
+	<title>Admin Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-      const xhr = new XMLHttpRequest() 
-      const data = xhr.open("GET", `http://localhost/auth/${username}/${password}`, true)
-      xhr.send()
-      }
-    </script>
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+	.level {
+		font-size:15px;
+	}
+	</style>
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="images/img-01.png" alt="IMG">
+				</div>
+
+				<form class="login100-form validate-form" action="/auth" method="POST">
+					<ul class="nav nav-pills">
+						<li class="active" id="personal"><a href="#" class="level" onclick="personal()">Personal</a></li>
+						<li id="empresarial"><a href="#" class="level" onclick="empresarial()">Empresarial</a></li>
+						<li id="agente"><a href="#productores" class="level" onclick="agente()">Productores</a></li>
+					  </ul>
+					  <br><br>
+					  
+
+					  <script>
+					 function personal(){
+						 document.getElementById("personal").className = "active";
+						 document.getElementById("empresarial").className = "";
+						 document.getElementById("agente").className = "";
+						 document.getElementById("empresa").style.visibility = "hidden";
+						 const field = document.getElementById("empresa_field").value = "usuario_empresa_id";
+					 } 
+					 function empresarial(){
+						 document.getElementById("personal").className = "";
+						 document.getElementById("empresarial").className = "active";
+						 document.getElementById("agente").className = "";
+						 document.getElementById("empresa").style.visibility = "visible";
+						 const field = document.getElementById("empresa_field").value = "";
+					 } 
+					 function agente(){
+						 document.getElementById("personal").className = "";
+						 document.getElementById("empresarial").className = "";
+						 document.getElementById("agente").className = "active";
+						 document.getElementById("empresa").style.visibility = "hidden";
+						 const field = document.getElementById("empresa_field").value = "usuario_empresa_id";
+					 } 
+					  </script>
+					<span class="login100-form-title">
+						Acceso <br> Travel Solutions &copy;
+					</span>
+					<div class="wrap-input100 validate-input" style="visibility: hidden" id="empresa" >
+						<input class="input100" type="text" value="usuario_empresa_id" name="empresa" id="empresa_field" placeholder="Nombre de Empresa">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" >
+						<input class="input100" type="text" name="usuario" placeholder="Usuario">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="password" name="password" placeholder="Contraseña">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						
+						<button class="login100-form-btn" type="submit">
+							Login
+						</button>
+					</div>
+					<div class="text-center p-t-136" style="margin-top: -100px">
+						<a class="txt2" href="#" ">
+						<span>Solicita tu acceso</span>
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+					<div class="text-center p-t-136" style="margin-top: -130px">
+						<a class="txt2" href="#" ">
+						<span>¿Olvidaste tu usuario o contraseña?</span>
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
 </html>

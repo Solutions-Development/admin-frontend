@@ -13,7 +13,7 @@ server.use(bodyParser.json());
 server.use(cors());
 server.use(logger('common'));
 server.use('/', router);
-server.use('/', express.static("assets"));
+server.use('/', express.static("loginAssets"));
 
 server.set('view engine', 'ejs');
 
