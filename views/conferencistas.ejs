@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/dashboard.css">
+    <title>Panel de Conferencistas</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <a href="dashboard.html"><ion-icon class="arrows" name="arrow-back"></ion-icon>Volver</a>
+      <a class="navbar-brand" href="#">
+          Crear Conferencista | Usuario
+      </a>
+      <a href="docs.html">Ver Documentacion<ion-icon class="arrows" name="arrow-forward"></ion-icon></a>
+    </nav>
+    <div class="dashboard-container">
+        <div class="card">
+            <div class="card-header">Introduzca los siguientes datos:</div>
+            <div class="card-body">
+                <form method="POST" action="http://api.solutions.com.do/conferencistas">
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label>Nombre Completo (Igual al Pasaporte)</label>
+                            <input required type="text" name="nombre" class="form-control" id="fullname" placeholder="John Doe">
+                        </div>
+                        <div class="form-group col">
+                            <label>Número de Cedula/Identificacion Personal</label>
+                            <input required type="text" name="cedula" class="form-control" id="personalID" placeholder="001-0000000-1">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label>Nacionalidad</label>
+                            <input required type="text" name="nacionalidad" class="form-control" id="natiotality" placeholder="Dominican@">
+                        </div>
+                        <div class="form-group col">
+                            <label>Teléfono Móvil/WhatsApp</label>
+                            <input required type="text" name="telefono_movil" class="form-control" id="whatsapp" placeholder="(849)-555-5555">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label>Teléfono Trabajo</label>
+                            <input required type="text" name="telefono_trabajo" class="form-control" id="workNumber" placeholder="849-555-5555">
+                        </div>
+                        <div class="form-group col">
+                            <label>Correo/E-mail</label>
+                            <input required type="text" name="correo" class="form-control" id="personalEmail" placeholder="email@gmail.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label>Estudio de Grado</label>
+                            <input required type="text" name="estudio_grado" class="form-control" id="estGrado" placeholder="Cirugía Clínica">
+                        </div>
+                        <div class="form-group col">
+                            <label>Sub Especialidad</label>
+                            <input required type="text" name="sub_especialidad" class="form-control" id="subEsp" placeholder="Dermatología">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Práctica Pública/Privada</label>
+                        <input required type="text" name="practica_publica" class="form-control" id="practice" placeholder="Conferencista">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label>Membresías Profesionales/Gremiales</label>
+                            <textarea required class="form-control" name="membresias" id="membership" rows="3" placeholder="Ej. Asociación Española de Médicos"></textarea>
+                        </div>
+                        <div class="form-group col">
+                            <label>Biografía</label>
+                            <textarea required class="form-control" name="biografia" id="personalBio" rows="3" placeholder="Biografía"></textarea>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            Datos Adicionales
+                        </div>
+                        <div class="card-body">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                  <a class="nav-link active" id="lodging-tab" data-toggle="tab" href="#lodging" role="tab" aria-controls="lodging" aria-selected="true">Datos de Hospedaje</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="flight-tab" data-toggle="tab" href="#flight" role="tab" aria-controls="flight" aria-selected="false">Datos de Vuelo</a>
+                                </li>
+                            </ul>
+                            <br>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="lodging" role="tabpanel" aria-labelledby="lodging-tab">
+                                    <div class="dashboard-container">
+                                        <form>
+                                            <div class="form-row align-items-center">
+                                              <div class="col-sm">
+                                                  <h4>Destino</h4>
+                                                  <br/>
+                                                  <select id="inputState" class="form-control">
+                                                    <option selected>Elegir</option>
+                                                    <option>País Destino</option>
+                                                    <option>República Dominicana</option>
+                                                  </select>
+                                              </div>
+                                              <div class="col-sm">
+                                                <h4>Check In</h4>
+                                                <br/>
+                                                <div class="input-group">
+                                                  <div class="input-group-prepend">
+                                                    <div class="input-group-text"><ion-icon name="calendar"></ion-icon></div>
+                                                  </div>
+                                                  <input required type="date" class="form-control" id="inlineFormInputGroupUsername" placeholder="Dia/Mes/Año">
+                                                  <br>
+                                                </div>
+                                              </div>
+                                              <div class="col-sm">
+                                                <h4>Check Out</h4>
+                                                <br/>
+                                                <div class="input-group">
+                                                  <div class="input-group-prepend">
+                                                    <div class="input-group-text"><ion-icon name="calendar"></ion-icon></div>
+                                                  </div>
+                                                  <input required type="date" class="form-control" id="inlineFormInputGroupUsername" placeholder="Dia/Mes/Año">
+                                                  <br>
+                                                </div>
+                                              </div>
+                                            <div class="col-sm">
+                                                <h4>Personas</h4>
+                                                <br/>
+                                                <select id="inputState" class="form-control">
+                                                  <option selected>1</option>
+                                                  <option>2</option>
+                                                  <option>3</option>
+                                                  <option>4</option>
+                                                  <option>5+</option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="flight" role="tabpanel" aria-labelledby="flight-tab">
+                                <div class="dashboard-container">
+                                    <div class="form-row" style="margin-top: 20px; margin-bottom: 20px;">
+                                        <div class="col">
+                                            <div class="form-check">
+                                                <input required class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" onclick="toggleFields()" value="option1" checked>
+                                                <label class="form-check-label" for="exampleRadios1">
+                                                  Boleta de Ida y Vuelta
+                                                </label>
+                                              </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-check">
+                                                <input required class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1" onclick="toggleFields()" checked>
+                                                <label class="form-check-label" for="exampleRadios2">
+                                                  Boleta de Ida
+                                                </label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <form>
+                                        <div class="form-row align-items-center">
+                                          <div class="col-sm oneWay">
+                                            <h4>Desde</h4>
+                                            <br/>
+                                            <select id="inputState" class="form-control">
+                                              <option selected>Destino</option>
+                                              <option>País Destino</option>
+                                              <option>República Dominicana</option>
+                                            </select>
+                                          </div>
+                                          <div class="col-sm oneWay">
+                                            <h4>Hasta</h4>
+                                            <br/>
+                                            <select id="inputState" class="form-control">
+                                              <option selected>Destino</option>
+                                              <option>País Destino</option>
+                                              <option>República Dominicana</option>
+                                            </select>
+                                          </div>
+                                          <div class="col-sm">
+                                            <h4><ion-icon name="arrow-dropright"></ion-icon>Entrada</h4>
+                                            <br/>
+                                            <div class="input-group">
+                                              <div class="input-group-prepend">
+                                                <div class="input-group-text"><ion-icon name="calendar"></ion-icon></div>
+                                              </div>
+                                              <input required type="date" class="form-control" id="inlineFormInputGroupUsername" placeholder="Dia/Mes/Año">
+                                              <br>
+                                            </div>
+                                          </div>
+                                          <div class="col-sm">
+                                            <h4><ion-icon name="arrow-dropright"></ion-icon>Salida</h4>
+                                            <br/>
+                                            <div class="input-group">
+                                              <div class="input-group-prepend">
+                                                <div class="input-group-text"><ion-icon name="calendar"></ion-icon></div>
+                                              </div>
+                                              <input required type="date" class="form-control" id="inlineFormInputGroupUsername" placeholder="Dia/Mes/Año">
+                                              <br>
+                                            </div>
+                                          </div>
+                                          <div class="col-sm">
+                                            <h4>Personas</h4>
+                                            <br/>
+                                            <select id="inputState" class="form-control">
+                                              <option selected>1</option>
+                                              <option>2</option>
+                                              <option>3</option>
+                                              <option>4</option>
+                                              <option>5+</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            </div>
+                            <br>
+                            <div class="alert alert-danger" role="alert">
+                                *La sociedad solo cubrira el boleto aereo/hospedaje del conferencista en la fecha del congreso. Si desea agregar mas personas a la reserva de hospedaje, debera cubir los gastos adicionales.
+                            </div>
+                            <button type="submit" class="btn btn-outline-info">Finalizar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <script>
+      function toggleFields() {
+        var x = document.getElementsByClassName("oneWay");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+    </script>
+    <footer class="page-footer bg-light">
+      <div class="footer-copyright text-center py-3">Interfaz Administrativa 2020 &copy; | <a href="docs.html">Desea ver las instrucciones?</a></a>
+      </div>
+  </footer>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

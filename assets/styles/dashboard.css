@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.dashboard-container {
+    padding: 20px;
+    margin: 10px;
+}
+
+.card-img-top {
+    width: 100% / 2;
+    height: 100% / 2;
+}
+
+.form-row ion-icon {
+    font-size: 18px !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.arrows ion-icon {
+    padding-top: 40px !important;
+}
+
+#welcome-back {
+    background-color: purple !important;
+}

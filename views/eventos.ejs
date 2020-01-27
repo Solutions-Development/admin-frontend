@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/dashboard.css">
+    <title>Creación de Eventos</title>
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <a href="dashboard.html"><ion-icon class="arrows" name="arrow-back"></ion-icon>Volver</a>
+    <a class="navbar-brand" href="#">
+        Interfaz Administrativa | Usuario
+    </a>
+    <a href="docs.html">Ver Documentacion<ion-icon class="arrows" name="arrow-forward"></ion-icon></a>
+  </nav>
+    <div class="dashboard-container">
+        <div class="card">
+            <div class="card-header">Creación de Eventos</div>
+            <div class="card-body">
+                <form method="post" action="http://api.solutions.com.do/evento" >
+                    <div class="form-group row">
+                      <label for="inputPassword" class="col-sm-2 col-form-label">Nombre Evento</label>
+                      <div class="col-sm-10">
+                        <input required type="text" name="nombre" class="form-control" placeholder="Ej. Demostracion Practica">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputState" class="col-sm-2 col-form-label">Nombre del Representante</label>
+                      <div class="col-sm-10">
+                        <select required id="inputState" name="representante" class="form-control">
+                          <option selected>Elegir</option>
+                          <option value="Hotel Catalonia">Ex.: Dr. Francisco Vallejo</option>
+                      </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-2 col-form-label">Fecha Inicio Evento</label>
+                      <div class="col-sm-10">
+                        <input required type="date" name="fecha_inicio" class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-2 col-form-label">Fecha Termino Evento</label>
+                      <div class="col-sm-10">
+                        <input required type="date" name="fecha_termino" class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPassword" class="col-sm-2 col-form-label">Duracion del Evento</label>
+                      <div class="col-sm-10">
+                        <input required type="text" name="duracion" class="form-control" placeholder="Duracion">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputState" class="col-sm-2 col-form-label">Sede Evento <a href="sedes.html" target="_blank" class="badge badge-primary">Crear Nueva Sede</a></label>
+                      <div class="col-sm-10">
+                        <select required id="inputState" name="sede" class="form-control">
+                          <option selected>Ej. Hard Rock Hotel & Casino</option>
+                          <option value="Hotel Catalonia">Hotel Catalonia</option>
+                          <option value="Hotel Barcelo">Hotel Barcelo</option>
+                          <option value="Hard Rock Casino & Resort, Punta Cana">Hard Rock Casino & Resort, Punta Cana</option>
+                      </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputState" class="col-sm-2 col-form-label">Locación Evento</label>
+                      <div class="col-sm-10">
+                        <select required id="inputState" name="locacion" class="form-control">
+                          <option selected>Ej. Hard Rock Hotel & Casino</option>
+                          <option value="Hotel Catalonia">Hotel Catalonia</option>
+                          <option value="Hotel Barcelo">Hotel Barcelo</option>
+                          <option value="Hard Rock Casino & Resort, Punta Cana">Hard Rock Casino & Resort, Punta Cana</option>
+                      </select>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                      <label for="inputState" class="col-sm-2 col-form-label">Evento Dirigido A:</label>
+                      <div class="col-sm-10">
+                        <select required id="inputState" name="dirigido" class="form-control">
+                          <option selected>Elegir</option>
+                          <option value="Participantes">Participantes</option>
+                          <option value="Conferencistas">Conferencistas</option>
+                          <option value="Staff">Staff</option>
+                          <option value="Fundadores">Fundadores</option>
+                          <option value="Promotores">Promotores</option>
+                          <option value="Laboratorios">Laboratorios</option>
+                        </select>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-info">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="page-footer font-small bg-light">
+  <div class="footer-copyright text-center py-3">Interfaz Administrativa 2020 &copy; | <a href="docs.html">Desea ver las instrucciones?</a></a>
+  </div>
+</footer>
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</html>
+

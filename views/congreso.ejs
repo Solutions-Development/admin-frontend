@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/dashboard.css">
+    <title>Panel de Creacion de Eventos</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+        <a href="dashboard.html"><ion-icon class="arrows" name="arrow-back"></ion-icon>Volver</a>
+        <a class="navbar-brand" href="#">
+            Interfaz Administrativa | Usuario
+        </a>
+        <a href="docs.html">Ver Documentacion<ion-icon class="arrows" name="arrow-forward"></ion-icon></a>
+    </nav>
+    <div class="dashboard-container">
+        <div class="card">
+            <div class="card-header">Creacion de Eventos</div>
+            <div class="card-body">
+                <form method="POST" action="http://api.solutions.com.do/Eventos">
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>Nombre Evento</label>
+                        <input required type="text" name="nombre" class="form-control" placeholder="XVI Evento de Ortopedia">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label>Fecha del Evento</label>
+                        <input required type="date" name="fecha_inicio" class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputAddress">Provincia/Ciudad</label>
+                      <input required type="text" name="fecha_termino" class="form-control" id="inputAddress" placeholder="Provincia/Ciudad">
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputCity">País</label>
+                        <input required type="text" name="pais" class="form-control" id="inputCity" placeholder="Republica Dominicana">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="inputZip">Direccion</label>
+                        <input required type="text" name="direccion" class="form-control" id="inputZip" placeholder="Hotel Barcelo #16">
+                      </div>
+                      <div class="form-group col-md-2">
+                        <label for="inputState">Sede</label>
+                        <select required id="inputState" name="sede" class="form-control">
+                          <option selected>Elegir</option>
+                          <option value="Hotel Catalonia">Hotel Catalonia</option>
+                          <option value="Hotel Barcelo">Hotel Barcelo</option>
+                          <option value="Hard Rock Casino & Resort, Punta Cana">Hard Rock Casino & Resort, Punta Cana</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group text-center">
+                      <label>Banner del Evento</label>
+                      <img src="https://placehold.it/920x200" class="card-img-top" alt="...">
+                      <hr>
+                      <a href="#" class="btn btn-outline-info">Subir Imagen</a>
+                    </div>
+                    <div class="form-group">
+                      
+                      <label>Seleccionar Iconografía</label>
+                      <div class="row" style="margin: 10px;">
+                        <div class="col">
+                            <div class="card justify-content-center">
+                                <div class="card-header">Paquete #1</div>
+                                <div class="card-body" style="margin: 10px;">
+                                    <input class="form-check-input" type="radio" name="iconName" id="exampleRadios1" value="option1">
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        Seleccionar
+                                    </label>
+                                    <hr>
+                                    <img src="./assets/paquete1.png" alt="img" class="card-img-top">
+                                </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                            <div class="card justify-content-center">
+                                <div class="card-header">Paquete #2</div>
+                                <div class="card-body" style="margin: 10px;">
+                                    <input required class="form-check-input" type="radio" name="iconName" id="exampleRadios2" value="option2">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        Seleccionar
+                                    </label>
+                                    <hr>
+                                    <img src="./assets/paquete2.png" alt="img" class="card-img-top">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card justify-content-center">
+                              <div class="card-header">Paquete #3</div>
+                              <div class="card-body" style="margin: 10px;">
+                                  <input required class="form-check-input" type="radio" name="iconName" id="exampleRadios3" value="option3">
+                                  <label class="form-check-label" for="exampleRadios3">
+                                      Seleccionar
+                                  </label>
+                                  <hr>
+                                  <img src="./assets/paquete3.png" alt="img" class="card-img-top">
+                              </div>
+                          </div>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="card" style="padding: 20px;">
+                      <form>
+                        <h4 style="text-align: center;">Patrocinadores</h4>
+                        <hr>
+                        <h5>Diamante</h5>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label>Subir Imagen</label>
+                            <input required type="file" name="imagen_diamante" class="form-control">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>Nombre del Patrocinador</label>
+                            <input required type="text" name="patrocinador_diamante" class="form-control" placeholder="Laboratorios Palo Alto">
+                          </div>
+                          <div class="form-group col-md-4">
+                            <button style="width: 100px;" class="btn btn-outline-info">Enviar</button>
+                          </div>
+                        </div>
+                        <h5>Oro</h5>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label>Subir Imagen</label>
+                            <input required type="file" name="imagen_oro" class="form-control">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>Nombre del Patrocinador</label>
+                            <input required type="text" name="patrocinador_oro" class="form-control" placeholder="Laboratorios Palo Alto">
+                          </div>
+                          <div class="form-group col-md-4">
+                            <button style="width: 100px;" class="btn btn-outline-info">Enviar</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <br>
+                    <div class="card" style="padding: 20px;">
+                      <h4 style="text-align: center;">Mapa del Evento</h4>
+                      <hr>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>Subir Imagen</label>
+                          <input required type="file" name="imagen_mapa" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <img src="https://placehold.it/400x200/" width="400px" height="200px" alt="mapa" class="card-img-top">
+                        </div>
+                        <div class="form-group col-md-4">
+                          <button style="width: 100px;" class="btn btn-outline-info">Subir</button>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="card" style="padding: 20px;">
+                      <h4 style="text-align: center;">Subir Presentación</h4>
+                      <hr>
+                      <form>
+                        <div class="form-group">
+                          <label for="presentation">Nombre de la Presentación:</label>
+                          <input required type="text" name="presentacion" class="form-control" id="presentation" aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
+                          <label for="link">Subir Link:</label>
+                          <input required type="text" name="presentacion_link" class="form-control" id="link">
+                        </div>
+                        <div class="form-group">
+                          <button style="width: 100px;" class="btn btn-outline-info">Subir</button>
+                        </div>
+                      </form>
+                    </form>
+                  </div>
+                <br>
+                <button type="submit" class="btn btn-outline-info">Enviar</button>
+        </div>
+    </div>
+    <footer class="page-footer font-small bg-light">
+      <div class=" text-center py-3">Interfaz Administrativa 2020 &copy; | <a href="docs.html">Desea ver las instrucciones?</a></a>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

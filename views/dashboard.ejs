@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Dashboard</title>
+  </head>
+  <body>
+      <style>
+        @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .dashboard-container {
+            padding: 20px;
+        }
+        </style>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand" href="#">
+        <%= user %>
+      </a>
+      <h6><a href="#">Cerrar Sesión</a></h6>
+    </nav>
+    <div class="jumbotron" id="welcome-back" style="text-align: center;">
+      <h1 class="display-4">Interfaz Administrativa</h1>
+      <p class="lead">Bienvenid@ a la Interfaz Administrativa, donde encontrará 
+        las herramientas para la creación de Eventos, Conferencistas, Actividades, Usuarios,
+        entre otros propósitos.</p>
+      <hr class="my-4">
+      <p>Las siguientes herramientas estarán disponibles segun el rol designado de su usuario.</p>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                  <div class="card-header">Crear Conferencistas</div>
+                <div class="card-body">
+                  <p class="card-text">Esta herramienta es para crear y guardar los conferencistas.</p>
+                  <a href="/conferencistas" class="btn btn-outline-info">Accesar</a>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="col-sm-6">
+                <div class="card bg-light">
+                    <div class="card-header">Crear Usuario</div>
+                  <div class="card-body">
+                    <p class="card-text">Esta herramienta es para crear usuarios para la Interfaz Administrativa.</p>
+                    <a href="/usuarios" class="btn btn-outline-info">Accesar</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-6">
+              <div class="card bg-light">
+                  <div class="card-header">Crear Sede</div>
+                <div class="card-body">
+                  <p class="card-text">Esta herramienta es para crear y guardar la informacion sobre las sedes.</p>
+                  <a href="/sedes" class="btn btn-outline-info">Accesar</a>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="col-sm-6">
+                <div class="card bg-light">
+                    <div class="card-header">Crear Actividad</div>
+                  <div class="card-body">
+                    <p class="card-text">Esta herramienta es para crear actividades en la Interfaz Administrativa.</p>
+                    <a href="/eventos" class="btn btn-outline-info">Accesar</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-6">
+              <div class="card bg-light">
+                  <div class="card-header">Crear Evento</div>
+                <div class="card-body">
+                  <p class="card-text">Esta herramienta es para crear y guardar informacion de eventos.</p>
+                  <a href="/congreso" class="btn btn-outline-info">Accesar</a>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="col-sm-6" hidden>
+                <div class="card bg-light">
+                    <div class="card-header">Reservas</div>
+                  <div class="card-body">
+                    <p class="card-text">Esta herramienta es para crear reservas en la iIterfaz Administrativa.</p>
+                    <a href="#" class="btn btn-outline-danger">No Disponible</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row" hidden>
+            <div class="col-sm-6">
+              <div class="card bg-light">
+                  <div class="card-header">Comunicaciones</div>
+                <div class="card-body">
+                  <p class="card-text">Panel de Comunicaciones.</p>
+                  <a href="#" class="btn btn-outline-danger">No Disponible</a>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="col-sm-6">
+                <div class="card bg-light">
+                    <div class="card-header">Reportes</div>
+                  <div class="card-body">
+                    <p class="card-text">Esta herramienta es para crear reportes en la interfaz Administrativa.</p>
+                    <a href="#" class="btn btn-outline-danger">No Disponible</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <footer class="page-footer font-small bg-light">
+        <div class="footer-copyright text-center py-3">Interfaz Administrativa 2020 &copy; | <a href="docs.html">Desea ver las instrucciones?</a>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

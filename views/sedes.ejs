@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/dashboard.css">
+    <title>Panel de Creacion Sedes</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <a href="dashboard.html"><ion-icon class="arrows" name="arrow-back"></ion-icon>Volver</a>
+      <a class="navbar-brand" href="#">
+          Interfaz Administrativa | Usuario
+      </a>
+      <a href="docs.html">Ver Documentacion<ion-icon class="arrows" name="arrow-forward"></ion-icon></a>
+    </nav>
+    <div class="dashboard-container">
+        <div class="card">
+            <div class="card-header">Creación de Sedes</div>
+            <div class="card-body">
+                <form method="POST" action="http://api.solutions.com.do/sede">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nombre Sede</label>
+                        <input required type="text" name="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ej: Hard Rock Hotel & Casino"required >
+                        <small id="emailHelp" class="form-text text-muted">Mensaje recordatorio opcional.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Ubicación Sede</label>
+                        <input required type="text" name="ubicacion" class="form-control" id="exampleInputPassword1" placeholder="Punta Cana">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Dirección Detallada Sede</label>
+                        <input required type="text" name="direccion_detallada" class="form-control" id="exampleInputPassword1" placeholder="Calle Bavaro #16">
+                    </div>
+                    <div class="form-group">
+                      <label for="inputState">Cantidad de Salones</label>
+                      <select required id="inputState" name="cantidad_salones" class="form-control">
+                        <option selected>Ej. 16</option>
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                        <option value="9+">9+</option>
+                      </select>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-outline-info">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer font-small bg-light">
+      <div class="footer-copyright text-center py-3">Interfaz Administrativa 2020 &copy; | <a href="docs.html">Desea ver las instrucciones?</a></a>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
