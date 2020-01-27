@@ -17,6 +17,6 @@ server.use('/', express.static("loginAssets"));
 
 server.set('view engine', 'ejs');
 
-Promise.resolve(server.listen(8080)).then(async () => {
+Promise.resolve(server.listen(process.env.PORT)).then(async () => {
     console.log("Server started!");
 });
