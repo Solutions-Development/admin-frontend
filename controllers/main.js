@@ -10,7 +10,9 @@ exports.auth = async (req, reply) => {
         reply.send({ message: "Usuario o clave incorrecta"});
     }
 }
-
+exports.dashboard = async (req, reply) => {
+ reply.render("dashboard");   
+}
 exports.conferencistas = async (req, reply) => {
     reply.render("conferencistas");
 }
