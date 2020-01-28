@@ -6,13 +6,13 @@ const router = Router();
 router.get('/', _.root);
 router.post('/auth', _.auth);
 
-router.get('/conferencistas', _.conferencistas);
-router.get('/congreso', _.congreso);
-router.get('/docs', _.docs);
-router.get('/eventos', _.eventos);
-router.get('/sedes', _.sedes);
-router.get('/usuarios', _.usuarios);
-router.get('/dashboard', _.dashboard);
+router.get('/conferencistas/:user', _.conferencistas);
+router.get('/congreso/:user', _.congreso);
+router.get('/docs/:user', _.docs);
+router.get('/eventos/:user', _.eventos);
+router.get('/sedes/:user', _.sedes);
+router.get('/usuarios/:user', _.usuarios);
+router.get('/dashboard/:user', _.dashboard);
 
 
 module.exports = router;
