@@ -12,5 +12,7 @@ router.get('/docs', _.docs);
 router.get('/eventos', _.eventos);
 router.get('/sedes', _.sedes);
 router.get('/usuarios', _.usuarios);
+router.get('/dashboard', _.dashboard);
+
 
 module.exports = router;
