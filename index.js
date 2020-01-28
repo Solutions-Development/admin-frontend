@@ -14,7 +14,7 @@ server.use(cors());
 server.use(logger('common'));
 server.use('/', router);
 server.use('/', express.static("loginAssets"));
-
+server.use('/', express.static("assets"));
 server.set('view engine', 'ejs');
 
 Promise.resolve(server.listen(process.env.PORT)).then(async () => {
