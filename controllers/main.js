@@ -11,7 +11,7 @@ exports.auth = async (req, reply) => {
     }
 }
 exports.dashboard = async (req, reply) => {
- reply.render("dashboard");   
+ reply.render("dashboard", { user: req.params.user });   
 }
 exports.conferencistas = async (req, reply) => {
     reply.render("conferencistas");
