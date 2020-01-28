@@ -31,3 +31,8 @@ exports.sedes = async (req, reply) => {
 exports.usuarios = async (req, reply) => {
     reply.render("usuarios", { user: req.params.user });
 }
+exports.static = async (req, reply) => {
+ const path = require("path");
+ const asset = req.params.asset;
+ reply.sendFile(path.resolve(`../app/assets/${asset}`));
+}
