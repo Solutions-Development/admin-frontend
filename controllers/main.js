@@ -36,3 +36,7 @@ exports.static = async (req, reply) => {
  const asset = req.params.asset;
  reply.sendFile(path.resolve(`../app/assets/${asset}`));
 }
+exports.test = async (req, reply) => {
+ const body = req.body;
+ reply.status(200).send(body);
+}
