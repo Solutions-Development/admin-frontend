@@ -15,4 +15,5 @@ router.get('/usuarios/:user', _.usuarios);
 router.get('/dashboard/:user/:empresa', _.dashboard);
 router.get('/static/:asset', _.static);
 router.post('/test', _.test);
+router.get('/marijoe/:user', _.marijoe);
 module.exports = router;
