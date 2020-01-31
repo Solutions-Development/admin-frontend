@@ -41,3 +41,6 @@ exports.test = async (req, reply) => {
  const body = req.body;
  reply.status(200).send(body);
 }
+exports.marijoe = async (req, reply) => {
+    reply.status(200).render("marijoe");
+}
