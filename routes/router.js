@@ -12,7 +12,7 @@ router.get('/docs/:user', _.docs);
 router.get('/eventos/:user', _.eventos);
 router.get('/sedes/:user', _.sedes);
 router.get('/usuarios/:user', _.usuarios);
-router.get('/dashboard/:user/:empresa', _.dashboard);
+router.get('/dashboard/:user', _.dashboard);
 router.get('/static/:asset', _.static);
 router.post('/test', _.test);
 router.get('/marijoe/:user', _.marijoe);
