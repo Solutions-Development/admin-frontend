@@ -42,5 +42,5 @@ exports.test = async (req, reply) => {
  reply.status(200).send(body);
 }
 exports.marijoe = async (req, reply) => {
-    reply.status(200).render("marijoe");
+    reply.status(200).render("marijoe", {user:req.params.user});
 }
