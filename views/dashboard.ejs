@@ -106,7 +106,7 @@
             </div>
         </div>
         <br>
-        <div class="row" hidden>
+        <div class="row">
             <div class="col-sm-6">
               <div class="card bg-light">
                   <div class="card-header">Comunicaciones</div>
@@ -117,12 +117,12 @@
               </div>
             </div>
             <br>
-            <div class="col-sm-6">
+            <div class="col-sm-6" id="marijoe">
                 <div class="card bg-light">
-                    <div class="card-header">Reportes</div>
+                    <div class="card-header">Menu MariJoe</div>
                   <div class="card-body">
-                    <p class="card-text">Esta herramienta es para crear reportes en la interfaz Administrativa.</p>
-                    <a href="#" class="btn btn-outline-danger">No Disponible</a>
+                    <p class="card-text">Creacion del Menu MariJoe</p>
+                    <a href="#" class="btn btn-outline-danger">Accesar</a>
                   </div>
                 </div>
             </div>
@@ -132,6 +132,16 @@
     <footer class="page-footer font-small bg-light">
         <div class="footer-copyright text-center py-3">Travel Solutions 2020 &copy; | <a href="docs.html">Desea ver las instrucciones?</a>
         </div>
+    <script>
+    function marijoe() { 
+    if( localStorage.get("marijoe") === "MariJoe") {
+      document.getElementById("marijoe").style.visibility = "visible";
+     } else {
+       document.getElementById("marijoe").style.visibility = "hidden";
+       }
+      }
+      marijoe()
+    </script>
     </footer>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
