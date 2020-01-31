@@ -12,7 +12,7 @@ exports.auth = async (req, reply) => {
     }
 }
 exports.dashboard = async (req, reply) => {
- reply.render("dashboard", { user: req.params.user });   
+ reply.render("dashboard", { user: req.params.user, empresa: req.params.empresa });   
 }
 exports.conferencistas = async (req, reply) => {
     reply.render("conferencistas", { user: req.params.user });
