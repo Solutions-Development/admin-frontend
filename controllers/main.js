@@ -4,8 +4,9 @@ exports.root = async (req, reply) => {
 exports.auth = async (req, reply) => {
     const username = req.body.username;
     const password = req.body.password;
+    const empresa = req.body.empresa;
     if (username === "admin" && password === "admin") {
-        reply.render("dashboard", { user: username });
+        reply.render("dashboard", { user: username, empresa: empresa });
     } else {
         reply.send({ message: "Usuario o clave incorrecta"});
     }
