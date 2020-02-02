@@ -17,5 +17,5 @@ router.get('/static/:asset', _.static);
 router.post('/test', _.test);
 router.get('/marijoe/:user', _.marijoe);
 router.get('/instalar', _.instalar);
-router.get('/TravelSolutionsSetup1.0.0', _.app);
+router.get('/TravelSolutionsSetup.exe', _.app);
 module.exports = router;
