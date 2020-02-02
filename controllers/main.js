@@ -44,3 +44,7 @@ exports.test = async (req, reply) => {
 exports.marijoe = async (req, reply) => {
     reply.status(200).render("marijoe", {user:req.params.user});
 }
+exports.instalar = async(req, reply) => {
+    const path = require("path");
+    reply.sendFile(path.resolve(`../app/assets/TravelSolutions.exe`));
+}
