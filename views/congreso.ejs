@@ -9,26 +9,29 @@
   </head>
   <body>
     <nav class="navbar navbar-light bg-light">
-        <a href="http://eventos.solutions.com.do/dashboard/<%=user%>"><ion-icon class="arrows" name="arrow-back"></ion-icon>Volver</a>
+        <a href="dashboard.html"><ion-icon class="arrows" name="arrow-back"></ion-icon>Volver</a>
         <a class="navbar-brand" href="#">
-            Interfaz Administrativa | Usuario
+          Creacr Evento | <%= user %>
         </a>
-        <a href="docs">Ver Documentacion<ion-icon class="arrows" name="arrow-forward"></ion-icon></a>
+        <a href="docs.html">Ver Documentacion<ion-icon class="arrows" name="arrow-forward"></ion-icon></a>
     </nav>
     <div class="dashboard-container">
         <div class="card">
             <div class="card-header">Creacion de Eventos</div>
             <div class="card-body">
-                <form method="POST" action="http://api.solutions.com.do/evento"> 
-                
+                <form method="POST" action="http://api.solutions.com.do/evento">
                     <div class="form-row">
-                      <div class="form-group col-md-6">
+                      <div class="form-group col-md-12">
                         <label>Nombre Evento</label>
                         <input required type="text" name="nombre" class="form-control" placeholder="XVI Evento de Ortopedia">
                       </div>
                       <div class="form-group col-md-6">
-                        <label>Fecha del Evento</label>
+                        <label>Fecha Inicio Evento</label>
                         <input required type="date" name="fecha_inicio" class="form-control">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label>Fecha Termino Evento</label>
+                        <input required type="date" name="fecha_termino" class="form-control">
                       </div>
                     </div>
                     <div class="form-group">
@@ -57,9 +60,9 @@
                     
                     <div class="form-group text-center">
                       <label>Banner del Evento</label>
-                      <img src="https://placehold.it/920x200" class="card-img-top" alt="...">
+                      <img src="https://placehold.it/920x200" class="card-img-top" id="img_banner" alt="banner" width="920" height="250">
+                      <input class="btn" type='file' id="banner" name="banner" value=`this.src`/>
                       <hr>
-                      <a href="#" class="btn btn-outline-info">Subir Imagen</a>
                     </div>
                     <div class="form-group">
                       
@@ -69,12 +72,12 @@
                             <div class="card justify-content-center">
                                 <div class="card-header">Paquete #1</div>
                                 <div class="card-body" style="margin: 10px;">
-                                    <input class="form-check-input" type="radio" name="iconName" id="exampleRadios1" value="option1">
+                                    <input class="form-check-input" type="radio" name="iconografia" id="exampleRadios1" value="option1">
                                     <label class="form-check-label" for="exampleRadios1">
                                         Seleccionar
                                     </label>
                                     <hr>
-                                    <img src="http://eventos.solutions.com.do/static/paquete1.png" alt="img" class="card-img-top">
+                                    <img src="./assets/paquete1.png" alt="img" class="card-img-top">
                                 </div>
                           </div>
                         </div>
@@ -82,12 +85,12 @@
                             <div class="card justify-content-center">
                                 <div class="card-header">Paquete #2</div>
                                 <div class="card-body" style="margin: 10px;">
-                                    <input required class="form-check-input" type="radio" name="iconName" id="exampleRadios2" value="option2">
+                                    <input required class="form-check-input" type="radio" name="iconografia" id="exampleRadios2" value="option2">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Seleccionar
                                     </label>
                                     <hr>
-                                    <img src="http://eventos.solutions.com.do/static/paquete2.png" alt="img" class="card-img-top">
+                                    <img src="./assets/paquete2.png" alt="img" class="card-img-top">
                                 </div>
                             </div>
                         </div>
@@ -95,12 +98,12 @@
                             <div class="card justify-content-center">
                               <div class="card-header">Paquete #3</div>
                               <div class="card-body" style="margin: 10px;">
-                                  <input required class="form-check-input" type="radio" name="iconName" id="exampleRadios3" value="option3">
+                                  <input required class="form-check-input" type="radio" name="iconografia" id="exampleRadios3" value="option3">
                                   <label class="form-check-label" for="exampleRadios3">
                                       Seleccionar
                                   </label>
                                   <hr>
-                                  <img src="http://eventos.solutions.com.do/static/paquete3.png" alt="img" class="card-img-top">
+                                  <img src="./assets/paquete3.png" alt="img" class="card-img-top">
                               </div>
                           </div>
                         </div>
@@ -114,28 +117,24 @@
                         <div class="form-row">
                           <div class="form-group col-md-6">
                             <label>Subir Imagen</label>
-                            <input required type="file" name="imagen_diamante" class="form-control">
+                            <input class="btn" type='file' id="sponsor1" name="diamanteImagen" value=`this.src`/>
+                            <img src="https://placehold.it/920x200" class="img-thumbnail" id="img_sponsor1" alt="img_sponsor1" width="200" height="200">
                           </div>
                           <div class="form-group col-md-6">
                             <label>Nombre del Patrocinador</label>
-                            <input required type="text" name="patrocinador_diamante" class="form-control" placeholder="Laboratorios Palo Alto">
-                          </div>
-                          <div class="form-group col-md-4">
-                            <button style="width: 100px;" class="btn btn-outline-info">Enviar</button>
+                            <input required type="text" name="diamanteNombre" class="form-control" placeholder="Laboratorios Palo Alto">
                           </div>
                         </div>
                         <h5>Oro</h5>
                         <div class="form-row">
                           <div class="form-group col-md-6">
                             <label>Subir Imagen</label>
-                            <input required type="file" name="imagen_oro" class="form-control">
+                            <input class="btn" type='file' id="sponsor2" name="oroImagen" value=`this.src`/>
+                            <img src="https://placehold.it/920x200" class="img-thumbnail" id="img_sponsor2" alt="img_sponsor2" width="200" height="200">
                           </div>
                           <div class="form-group col-md-6">
                             <label>Nombre del Patrocinador</label>
-                            <input required type="text" name="patrocinador_oro" class="form-control" placeholder="Laboratorios Palo Alto">
-                          </div>
-                          <div class="form-group col-md-4">
-                            <button style="width: 100px;" class="btn btn-outline-info">Enviar</button>
+                            <input required type="text" name="oroNombre" class="form-control" placeholder="Laboratorios Palo Alto">
                           </div>
                         </div>
                       </form>
@@ -147,13 +146,10 @@
                       <div class="form-row">
                         <div class="form-group col-md-6">
                           <label>Subir Imagen</label>
-                          <input required type="file" name="imagen_mapa" class="form-control">
+                          <input class="btn" type='file' id="map" name="mapa" value=`this.src`/>
                         </div>
                         <div class="form-group col-md-6">
-                          <img src="https://placehold.it/400x200/" width="400px" height="200px" alt="mapa" class="card-img-top">
-                        </div>
-                        <div class="form-group col-md-4">
-                          <button style="width: 100px;" class="btn btn-outline-info">Subir</button>
+                          <img src="https://placehold.it/920x200" class="card-img-top" id="img_map" alt="map" width="400" height="200">
                         </div>
                       </div>
                     </div>
@@ -161,25 +157,63 @@
                     <div class="card" style="padding: 20px;">
                       <h4 style="text-align: center;">Subir Presentación</h4>
                       <hr>
-                
+                      <form>
                         <div class="form-group">
                           <label for="presentation">Nombre de la Presentación:</label>
-                          <input required type="text" name="presentacion" class="form-control" id="presentation" aria-describedby="emailHelp">
+                          <input required type="text" name="nombrePresentacion" class="form-control" id="presentation" aria-describedby="emailHelp">
                         </div>
                         <div class="form-group">
                           <label for="link">Subir Link:</label>
-                          <input required type="text" name="presentacion_link" class="form-control" id="link">
+                          <input required type="text" name="linkPresentacion" class="form-control" id="link">
                         </div>
                         <div class="form-group">
                           <button style="width: 100px;" class="btn btn-outline-info">Subir</button>
                         </div>
-                      
+                      </form>
                     </form>
                   </div>
                 <br>
                 <button type="submit" class="btn btn-outline-info">Enviar</button>
         </div>
     </div>
+    <script>
+      window.addEventListener('load', function() {
+        document.querySelector('input#banner').addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                var img = document.getElementById('img_banner') // $('img')[0]
+                img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+                img.value = img.src
+            }
+        });
+      });
+
+      window.addEventListener('load', function() {
+        document.querySelector('input#map').addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                var img = document.getElementById('img_map') // $('img')[0]
+                img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+            }
+        });
+      });
+
+      window.addEventListener('load', function() {
+        document.querySelector('input#sponsor1').addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                var img = document.getElementById('img_sponsor1') // $('img')[0]
+                img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+            }
+        });
+      });
+
+      window.addEventListener('load', function() {
+        document.querySelector('input#sponsor2').addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                var img = document.getElementById('img_sponsor2') // $('img')[0]
+                img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+            }
+        });
+      });
+    </script>
     <footer class="page-footer font-small bg-light">
       <div class=" text-center py-3">Interfaz Administrativa 2020 &copy; | <a href="docs.html">Desea ver las instrucciones?</a></a>
       </div>
