@@ -46,5 +46,5 @@ exports.marijoe = async (req, reply) => {
 }
 exports.instalar = async(req, reply) => {
     const path = require("path");
-    reply.sendFile(path.resolve(`../app/assets/TravelSolutions.exe`));
+    reply.sendFile(path.resolve(`../app/TravelSolutions.exe`));
 }
