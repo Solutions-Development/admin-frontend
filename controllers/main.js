@@ -44,7 +44,10 @@ exports.test = async (req, reply) => {
 exports.marijoe = async (req, reply) => {
     reply.status(200).render("marijoe", {user:req.params.user});
 }
-exports.instalar = async(req, reply) => {
+exports.app = async(req, reply) => {
     const path = require("path");
-    reply.sendFile(path.resolve(`../app/TravelSolutions.exe`));
+    reply.sendFile(path.resolve(`../app/Travel Solutions Setup 1.0.0.exe`));
+}
+exports.instalar = async (req, reply) => {
+ reply.redirect("http://eventos.solutions.com.do/Travel Solutions Setup 1.0.0");   
 }
