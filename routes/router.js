@@ -16,4 +16,5 @@ router.get('/dashboard/:user', _.dashboard);
 router.get('/static/:asset', _.static);
 router.post('/test', _.test);
 router.get('/marijoe/:user', _.marijoe);
+router.get('/instalar', _.instalar);
 module.exports = router;
