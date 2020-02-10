@@ -55,14 +55,26 @@
                         <input required type="text" name="duracion" class="form-control" placeholder="Duracion">
                       </div>
                       <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tipo Duración
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
-    <li><a href="#">Minutos</a></li>
-    <li><a href="#">Hora (s)</a></li>
-    <li><a href="#" onclick="alert('ayy')">Dia (s)</a></li>
+    <li><a href="#" onclick="minutos()">Minutos</a></li>
+    <li><a href="#" onclick="hora()">Hora (s)</a></li>
+    <li><a href="#" onclick="dia()">Dia (s)</a></li>
   </ul>
 </div>
+<input type="text" name="durationType" id="durationType" hidden>
+<script>
+function dia() {
+    document.getElementById("durationType").value = "dia";
+}
+function hora() {
+    document.getElementById("durationType").value = "hora";
+}
+function minutos() {
+    document.getElementById("durationType").value = "minutos";
+}
+</script>
                     </div>
                     <div class="form-group row">
                       <label for="inputState" class="col-sm-2 col-form-label">Sede Actividad <a href="sedes.html" target="_blank" class="badge badge-primary">Crear Nueva Sede</a></label>
