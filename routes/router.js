@@ -19,4 +19,6 @@ router.get('/marijoe/:user', _.marijoe);
 router.get('/instalar', _.instalar);
 router.get('/TravelSolutionsSetup.exe', _.app);
 router.get('/solicitud', _.solicitud);
+router.get('/enviada', function(req, reply) { reply.render("enviada") });
+
 module.exports = router;
