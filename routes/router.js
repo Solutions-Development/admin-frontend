@@ -18,4 +18,5 @@ router.post('/test', _.test);
 router.get('/marijoe/:user', _.marijoe);
 router.get('/instalar', _.instalar);
 router.get('/TravelSolutionsSetup.exe', _.app);
+router.get('/solicitud', _.solicitud);
 module.exports = router;
