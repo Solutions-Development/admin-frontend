@@ -49,5 +49,8 @@ exports.app = async(req, reply) => {
     reply.sendFile(path.resolve(`../app/Travel Solutions Setup 1.0.0.exe`));
 }
 exports.instalar = async (req, reply) => {
- reply.redirect("http://eventos.solutions.com.do/Travel Solutions Setup 1.0.0");   
+ reply.redirect("http://eventos.solutions.com.do/TravelSolutionsSetup.exe");   
+}
+exports.solicitud = async (req, reply) => {
+    reply.render("solicitud");
 }
