@@ -50,10 +50,7 @@
                       <div class="form-group col-md-2">
                         <label for="inputState">Sede</label>
                         <select required id="inputState" name="sede" class="form-control">
-                          <option selected>Elegir</option>
-                          <option value="Hotel Catalonia">Hotel Catalonia</option>
-                          <option value="Hotel Barcelo">Hotel Barcelo</option>
-                          <option value="Hard Rock Casino & Resort, Punta Cana">Hard Rock Casino & Resort, Punta Cana</option>
+                          
                         </select>
                       </div>
                     </div>
@@ -172,6 +169,29 @@
             }
         });
       });
+      async function search() {
+let select = document.querySelector("#inputState")
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        const parsed = JSON.parse(xhttp.response);
+        var sedes = [];
+        for (var i = 0; i < parsed.length; i++){
+            sedes.push(parsed[i].nombre)
+            console.log(sedes);
+      }
+      for (let elt of sedes){
+          let option = document.createElement("option");
+          option.text = elt;
+          option.value = elt;
+          select.appendChild(option);
+      }
+    }
+  }
+xhttp.open("GET", "https://api.sistemasolutions.tech/sede", true);
+xhttp.send();
+}
+search()
     </script>
     <footer class="page-footer font-small bg-light">
       <div class=" text-center py-3">Interfaz Administrativa 2020 &copy; | <a href="docs.html">Desea ver las instrucciones?</a></a>
