@@ -19,7 +19,7 @@
         <div class="card">
             <div class="card-header">Creacion de Eventos</div>
             <div class="card-body">
-                <form method="POST" action="https://api.sistemasolutions.tech/evento">
+                <form method="POST" action="http://eventos.solutions.com.do/test">
                     <div class="form-row">
                       <div class="form-group col-md-12">
                         <label>Nombre Evento</label>
@@ -58,9 +58,30 @@
                     <div class="form-group text-center">
                       <label>Banner del Evento</label>
                       <img src="https://placehold.it/920x200" class="card-img-top" id="img_banner" alt="banner" width="920" height="250">
-                      <input class="btn" type='image' id="banner" name="banner" value=''/>
+                      <input class="btn" type='file' id="banner" name="banner" />
                       <hr>
                     </div>
+                    <script>
+                    function uploadFile() {
+                    var blobFile = $('#filechooser').files[0];
+                    var formData = new FormData();
+                    formData.append("fileToUpload", blobFile);
+
+                    $.ajax({
+                    url: "http://eventos.solutions.com.do/test",
+                    type: "POST",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                    },
+                    error: function(jqXHR, textStatus, errorMessage) {
+                   console.log(errorMessage); // Optional
+                    }
+                   });
+                   document.getElementById("hiddenSubmit").click();
+                  }
+                    </script>
                     <div class="form-group">
                       
                       <label>Seleccionar Iconografía</label>
@@ -121,7 +142,8 @@
                         </div>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-outline-info">Enviar</button>
+                    <button type="submit" style="visibility: hidden" id="hiddenSubmit"></button>
+                    <button type="button" onclick="uploadFile()" class="btn btn-outline-info">Enviar</button>
                     </form>
                   </div>
                 <br>
