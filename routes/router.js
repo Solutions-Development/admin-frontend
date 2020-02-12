@@ -11,6 +11,7 @@ router.get('/congreso/:user', _.congreso);
 router.get('/docs/:user', _.docs);
 router.get('/eventos/:user', _.eventos);
 router.get('/sedes/:user', _.sedes);
+router.get('/locaciones/:suer', _.locaciones);
 router.get('/usuarios/:user', _.usuarios);
 router.get('/dashboard/:user', _.dashboard);
 router.get('/static/:asset', _.static);
