@@ -5,7 +5,14 @@
     <link rel="stylesheet" href="/styles/dashboard.css">
     <title>Panel de Creacion de Eventos</title>
   </head>  
-  
+  <body>
+   <nav class="navbar navbar-light bg-light">
+        <a href="dashboard.html"><ion-icon class="arrows" name="arrow-back"></ion-icon>Volver</a>
+        <a class="navbar-brand" href="#">
+          Creacr Evento | <%= user %>
+        </a>
+        <a href="docs.html">Ver Documentacion<ion-icon class="arrows" name="arrow-forward"></ion-icon></a>
+    </nav>
   <div class="card" style="padding: 20px;">
                       <form>
                         <h4 style="text-align: center;">Patrocinadores</h4>
@@ -20,10 +27,11 @@
                         <div class="form-group col-md-6">
                             <label>Nombre del Patrocinador</label>
                             <input required type="text" name="diamanteNombre" class="form-control" placeholder="Laboratorios Palo Alto">
-                          </div>
-                         <div class="form-group col-md-6">
-                            <label>Tipo de Patrocinador</label>
-                            <input required type="text" name="tipo" class="form-control" placeholder="Patrocinador Diamante">
-                          </div>
-                      </form>
+                        </div>
+                   <div class="form-group col-md-6">
+                         <label>Tipo de Patrocinador</label>
+                         <input required type="text" name="tipo" class="form-control" placeholder="Patrocinador Diamante">
                     </div>
+            </form>
+      </div>
+</body>
