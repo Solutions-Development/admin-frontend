@@ -54,6 +54,9 @@ exports.instalar = async (req, reply) => {
 exports.solicitud = async (req, reply) => {
     reply.render("solicitud");
 }
-exports.patrocinadores= async (req, reply) => {
+exports.patrocinadores = async (req, reply) => {
     reply.render("patrocinadores", { user: req.params.user });
+}
+exports.locaciones = async (req, reply) => {
+    reply.render("locacion", { user: req.params.user });
 }
