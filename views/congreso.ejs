@@ -61,7 +61,7 @@
                     <div class="form-group text-center">
                       <label>Banner del Evento</label>
                       <img src="https://placehold.it/920x200" class="card-img-top" id="img_banner" alt="banner" width="920" height="250">
-                      <input class="btn" type='file' id="banner" onchange="previewFile()" name="banner"/>
+                      <input class="btn" type='file' id="banner" onchange="previewFile()" />
                       <hr>
                     </div>
            
@@ -125,14 +125,15 @@
                         </div>
                       </div>
                     </div>
-                    <button type="submit" style="visibility: hidden" id="hiddenSubmit"></button>
-                    <button type="button" onclick="uploadFile()" class="btn btn-outline-info">Enviar</button>
+                    <input type="text" style="visibility: hidden" id="bannerField" name="banner"/>
+                    <button type="submit" class="btn btn-outline-info">Enviar</button>
                     </form>
                   </div>
                 <br>
                 
         </div>
     </div>
+    
     <script>
       function previewFile() {
   const preview = document.querySelector('img#img_banner');
@@ -140,7 +141,7 @@
   const reader = new FileReader();
 
   reader.addEventListener("load", function () {
-    console.log(reader.result);
+    document.getElementById("bannerField").value = reader.result;
     preview.src = reader.result;
   }, false);
 
