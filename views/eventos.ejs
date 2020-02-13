@@ -9,7 +9,6 @@
     <title>Creación de Actvidades</title>
 </head>
 <body>
-  <!-- Photo by Hunters Race on Unsplash -->
   <nav class="navbar navbar-light bg-light">
     <a href="dashboard.html"><ion-icon class="arrows" name="arrow-back"></ion-icon>Volver</a>
     <a class="navbar-brand" href="#">
@@ -30,12 +29,14 @@
                     </div>
                     
                     
-                    <div class="form-group row">
-                      <label class="col-sm-2 col-form-label">Encargado Actividad</label>
+                   <div class="form-group row">
+                      <label for="encargadoActividad" class="col-sm-2 col-form-label">Encargado Actividad</label>
                       <div class="col-sm-10">
-                        <input required type="text" name="representante" class="form-control">
+                        <select required id="encargadoActividad" name="representante" class="form-control">
+                          <option selected>Elegir</option>
+                        </select>
                       </div>
-                    </div>
+                      </div>
                     
                     <div class="form-group row">
                       <label class="col-sm-2 col-form-label">Fecha Inicio Evento</label>
@@ -198,6 +199,30 @@ xhttp.open("GET", "https://api.sistemasolutions.tech/tipoActividad", true);
 xhttp.send();
 }
 searchType()
+
+async function searchEncargado() {
+let select = document.querySelector("#encargadoActividad")
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        const parsed = JSON.parse(xhttp.response);
+        var sedes = [];
+        for (var i = 0; i < parsed.length; i++){
+            sedes.push(parsed[i].nombre)
+            console.log(sedes);
+      }
+      for (let elt of sedes){
+          let option = document.createElement("option");
+          option.text = elt;
+          option.value = elt;
+          select.appendChild(option);
+      }
+    }
+  }
+xhttp.open("GET", "https://api.sistemasolutions.tech/conferencistas", true);
+xhttp.send();
+}
+searchEncargado()
 </script>
 <footer class="page-footer font-small bg-light">
   <div class="footer-copyright text-center py-3">Interfaz Administrativa 2020 &copy; | <a href="docs.html">Desea ver las instrucciones?</a></a>
