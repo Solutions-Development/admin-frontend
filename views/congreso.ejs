@@ -140,8 +140,7 @@
                 var img = document.getElementById('img_banner') // $('img')[0]
                 img.src = URL.createObjectURL(this.files[0]); // set src to blob url
                 img.value = URL.createObjectURL(this.files[0])
-                const bt = URL.createObjectURL(this.files[0]);
-                console.log(bt)
+                console.log(this.files[0])
             }
         });
       });
