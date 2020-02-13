@@ -141,9 +141,8 @@
   const reader = new FileReader();
 
   reader.addEventListener("load", function () {
-  var r = reader.result;
-    var b64 = r.replace(/^data:image.+;base64,/, '');
-    document.getElementById("bannerField").value = b64;
+    var r = reader.result;
+    document.getElementById("bannerField").value = r;
     preview.src = reader.result;
   }, false);
 
