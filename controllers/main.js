@@ -39,6 +39,7 @@ exports.static = async (req, reply) => {
 }
 exports.test = async (req, reply) => {
  const body = req.body;
+ console.log(body);
  reply.status(200).send(body);
 }
 exports.marijoe = async (req, reply) => {
