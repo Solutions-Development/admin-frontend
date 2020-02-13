@@ -69,6 +69,19 @@
                     };
                     reader.readAsDataURL(file);
                    };
+                   
+                   var _input = document.getElementById("banner");
+
+                    _input.onchange = function () {
+                     var _file = _input.files[0],
+                     _reader = new FileReader();
+
+                     _reader.onloadend = function () {
+                     var _b64 = reader.result.replace(/^data:.+;base64,/, '');
+                     console.log(_b64); //-> "R0lGODdhAQABAPAAAP8AAAAAACwAAAAAAQABAAACAkQBADs="
+                    };
+                    _reader.readAsDataURL(_file);
+                   };
                 </script>
                     <div class="form-group text-center">
                       <label>Banner del Evento</label>
