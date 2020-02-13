@@ -114,6 +114,15 @@ function minutos() {
                       </div>
                       </div>
                       <br>
+                        <div class="form-group row">
+                      <label for="tipoActividad" class="col-sm-2 col-form-label">Tipo Actividad</label>
+                      <div class="col-sm-10">
+                        <select required id="tipoActividad" name="tipo" class="form-control">
+                          <option selected>Elegir</option>
+                        </select>
+                      </div>
+                      </div>
+                      <br>
                        <div class="form-group row">
                       <label for="eventoAsignado" class="col-sm-2 col-form-label">Asignar Evento:</label>
                       <div class="col-sm-10">
@@ -154,6 +163,30 @@ xhttp.open("GET", "https://api.sistemasolutions.tech/eventos", true);
 xhttp.send();
 }
 search()
+
+async function searchType() {
+let select = document.querySelector("#tipoActividad")
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        const parsed = JSON.parse(xhttp.response);
+        var sedes = [];
+        for (var i = 0; i < parsed.length; i++){
+            sedes.push(parsed[i].nombre)
+            console.log(sedes);
+      }
+      for (let elt of sedes){
+          let option = document.createElement("option");
+          option.text = elt;
+          option.value = elt;
+          select.appendChild(option);
+      }
+    }
+  }
+xhttp.open("GET", "https://api.sistemasolutions.tech/tipoActividad", true);
+xhttp.send();
+}
+searchType()
 </script>
 <footer class="page-footer font-small bg-light">
   <div class="footer-copyright text-center py-3">Interfaz Administrativa 2020 &copy; | <a href="docs.html">Desea ver las instrucciones?</a></a>
