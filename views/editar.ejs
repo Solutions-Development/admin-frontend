@@ -34,16 +34,16 @@
             <p class="lead">Sección Administrativa para la actualización de datos.</p>
             <hr class="my-4">
         </div>
-        <a href="/editar/<%= user %>">Editar Entradas - Actualizar Datos</a>
+        <a href="/dashboard/<%= user %>">Menú Principal</a>
     </div>
     <br>
     <div class="container">
         <div class="row">
             <div class="col-sm-6" id="conferencista">
               <div class="card">
-                  <div class="card-header">Crear Evento</div>
+                  <div class="card-header">Ver Eventos</div>
                 <div class="card-body">
-                  <p class="card-text">Esta herramienta es para crear y guardar eventos.</p>
+                  <p class="card-text">Visualizar y editar eventos existentes.</p>
                   <a href="/congreso/<%=user%>" class="btn btn-outline-info">Accesar</a>
                 </div>
               </div>
@@ -51,9 +51,9 @@
             <br>
             <div class="col-sm-6">
                 <div class="card bg-light">
-                    <div class="card-header">Crear Usuario</div>
+                    <div class="card-header">Ver Usuarios</div>
                   <div class="card-body">
-                    <p class="card-text">Esta herramienta es para crear usuarios para la Interfaz Administrativa.</p>
+                    <p class="card-text">Visualizar, Editar, Desactivar usuarios existentes.</p>
                     <a href="/usuarios/<%=user%>" class="btn btn-outline-info">Accesar</a>
                   </div>
                 </div>
@@ -63,9 +63,9 @@
         <div class="row">
             <div class="col-sm-6" id="sede">
               <div class="card bg-light">
-                  <div class="card-header">Crear Sede</div>
+                  <div class="card-header">Ver Sedes</div>
                 <div class="card-body">
-                  <p class="card-text">Esta herramienta es para crear y guardar la informacion sobre las sedes.</p>
+                  <p class="card-text">Visualizar y Editar Sedes existentes.</p>
                   <a href="/sedes/<%=user%>" class="btn btn-outline-info">Accesar</a>
                 </div>
               </div>
@@ -73,7 +73,7 @@
             <br>
             <div class="col-sm-6" id="actividad">
                 <div class="card bg-light">
-                    <div class="card-header">Crear Actividad</div>
+                    <div class="card-header">Ver Actividades</div>
                   <div class="card-body">
                     <p class="card-text">Esta herramienta es para crear actividades en la Interfaz Administrativa.</p>
                     <a href="/eventos/<%=user%>" class="btn btn-outline-info">Accesar</a>
@@ -85,9 +85,9 @@
           <div class="row">
             <div class="col-sm-6" id="evento">
               <div class="card bg-light">
-                  <div class="card-header">Crear Conferencistas</div>
+                  <div class="card-header">Ver Conferencistas</div>
                 <div class="card-body">
-                  <p class="card-text">Creacion de conferencistas.</p>
+                  <p class="card-text">Visualizar y Editar conferencistas existentes.</p>
                   <a href="/conferencistas/<%=user%>" class="btn btn-outline-info">Accesar</a>
                 </div>
               </div>
@@ -97,10 +97,10 @@
             <br>
             <div class="col-sm-6" id="reserva">
                 <div class="card bg-light">
-                    <div class="card-header">Crear Conferencia</div>
+                    <div class="card-header">Ver Conferencias</div>
                   <div class="card-body">
-                    <p class="card-text">Creacion de conferencias.</p>
-                    <a href="/crearConferencia" class="btn btn-outline-info">Accesar</a>
+                    <p class="card-text">Visualizar y Editar conferencias existentes.</p>
+                    <a href="/crearConferencia" class="btn btn-outline-danger">No Disponible</a>
                   </div>
                 </div>
             </div>
@@ -109,9 +109,9 @@
         <div class="row">
             <div class="col-sm-6" id="comunicaciones">
               <div class="card bg-light">
-                  <div class="card-header">Crear Patrocinador</div>
+                  <div class="card-header">Ver Patrocinadores</div>
                 <div class="card-body">
-                  <p class="card-text">Creacion de Patrocinadores.</p>
+                  <p class="card-text">Visualizar y Editar patrocinadores existentes.</p>
                   <a href="http://eventos.solutions.com.do/patrocinadores/<%=user%>" class="btn btn-outline-info">Accesar</a>
                 </div>
               </div>
@@ -119,24 +119,14 @@
             <br>
             <div class="col-sm-6" id="comunicaciones">
               <div class="card bg-light">
-                  <div class="card-header">Crear Locacion</div>
+                  <div class="card-header">Ver Locaciones</div>
                 <div class="card-body">
-                  <p class="card-text">Creacion de Locaciones.</p>
+                  <p class="card-text">Visualizar y Editar locaciones existentes.</p>
                   <a href="http://eventos.solutions.com.do/locaciones/<%=user%>" class="btn btn-outline-info">Accesar</a>
                 </div>
               </div>
             </div>
-            <br>
-            <div class="col-sm-6" id="marijoe">
-                <div class="card bg-light">
-                    <div class="card-header">Menu MariJoe</div>
-                  <div class="card-body">
-                    <p class="card-text">Creacion del Menu MariJoe</p>
-                    <a href="#" class="btn btn-outline-danger">Accesar</a>
-                  </div>
-                </div>
-            </div>
-        </div>
+
         <br>
     </div>
     <footer class="page-footer font-small bg-light">
