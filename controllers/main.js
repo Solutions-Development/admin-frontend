@@ -61,3 +61,6 @@ exports.patrocinadores = async (req, reply) => {
 exports.locaciones = async (req, reply) => {
     reply.render("locacion", { user: req.params.user });
 }
+exports.editar = async (req, reply) => {
+    reply.render("editar", { user: req.params.user });
+}
