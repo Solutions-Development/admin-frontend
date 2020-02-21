@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Dashboard</title>
+  </head>
+  <body>
+      <style>
+        @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .dashboard-container {
+            padding: 20px;
+        }
+        #main {
+        backround: url("https://img.favpng.com/6/6/0/business-background-people-png-favpng-Fdk7Wcnrk6zVs6diyQnQt0a0L.jpg");
+        }
+        </style>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand" href="#">
+        <%= user %>
+      </a>
+      <h6><a href="#">Cerrar Sesión</a></h6>
+    </nav>
+    <div class="jumbotron" id="main">
+    <img src="http://eventos.solutions.com.do/static/business-image.png">
+        <div class="text">
+            <h1 class="display-4">Actualización de Datos</h1>
+            <p class="lead">Sección Administrativa para la actualización de datos.</p>
+            <hr class="my-4">
+        </div>
+        <a href="/editar/<%= user %>">Editar Entradas - Actualizar Datos</a>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6" id="conferencista">
+              <div class="card">
+                  <div class="card-header">Crear Evento</div>
+                <div class="card-body">
+                  <p class="card-text">Esta herramienta es para crear y guardar eventos.</p>
+                  <a href="/congreso/<%=user%>" class="btn btn-outline-info">Accesar</a>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="col-sm-6">
+                <div class="card bg-light">
+                    <div class="card-header">Crear Usuario</div>
+                  <div class="card-body">
+                    <p class="card-text">Esta herramienta es para crear usuarios para la Interfaz Administrativa.</p>
+                    <a href="/usuarios/<%=user%>" class="btn btn-outline-info">Accesar</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-6" id="sede">
+              <div class="card bg-light">
+                  <div class="card-header">Crear Sede</div>
+                <div class="card-body">
+                  <p class="card-text">Esta herramienta es para crear y guardar la informacion sobre las sedes.</p>
+                  <a href="/sedes/<%=user%>" class="btn btn-outline-info">Accesar</a>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="col-sm-6" id="actividad">
+                <div class="card bg-light">
+                    <div class="card-header">Crear Actividad</div>
+                  <div class="card-body">
+                    <p class="card-text">Esta herramienta es para crear actividades en la Interfaz Administrativa.</p>
+                    <a href="/eventos/<%=user%>" class="btn btn-outline-info">Accesar</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+      <br>
+          <div class="row">
+            <div class="col-sm-6" id="evento">
+              <div class="card bg-light">
+                  <div class="card-header">Crear Conferencistas</div>
+                <div class="card-body">
+                  <p class="card-text">Creacion de conferencistas.</p>
+                  <a href="/conferencistas/<%=user%>" class="btn btn-outline-info">Accesar</a>
+                </div>
+              </div>
+            </div>
+            
+
+            <br>
+            <div class="col-sm-6" id="reserva">
+                <div class="card bg-light">
+                    <div class="card-header">Crear Conferencia</div>
+                  <div class="card-body">
+                    <p class="card-text">Creacion de conferencias.</p>
+                    <a href="/crearConferencia" class="btn btn-outline-info">Accesar</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-6" id="comunicaciones">
+              <div class="card bg-light">
+                  <div class="card-header">Crear Patrocinador</div>
+                <div class="card-body">
+                  <p class="card-text">Creacion de Patrocinadores.</p>
+                  <a href="http://eventos.solutions.com.do/patrocinadores/<%=user%>" class="btn btn-outline-info">Accesar</a>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="col-sm-6" id="comunicaciones">
+              <div class="card bg-light">
+                  <div class="card-header">Crear Locacion</div>
+                <div class="card-body">
+                  <p class="card-text">Creacion de Locaciones.</p>
+                  <a href="http://eventos.solutions.com.do/locaciones/<%=user%>" class="btn btn-outline-info">Accesar</a>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="col-sm-6" id="marijoe">
+                <div class="card bg-light">
+                    <div class="card-header">Menu MariJoe</div>
+                  <div class="card-body">
+                    <p class="card-text">Creacion del Menu MariJoe</p>
+                    <a href="#" class="btn btn-outline-danger">Accesar</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <footer class="page-footer font-small bg-light">
+        <div class="footer-copyright text-center py-3">Travel Solutions 2020 &copy; | <a href="docs.html">Desea ver las instrucciones?</a>
+        </div>
+    <script>
+    function marijoe() { 
+    if( "<%=empresa%>" === "MariJoe") {
+      document.getElementById("marijoe").style.visibility = "visible";
+      document.getElementById("conferencista").style.visibility = "hidden";
+      document.getElementById("sede").style.visibility = "hidden";
+      document.getElementById("actividad").style.visibility = "hidden";
+      document.getElementById("evento").style.visibility = "hidden";
+      document.getElementById("reserva").style.visibility = "hidden";
+      document.getElementById("comunicaciones").style.visibility = "hidden";
+     } else {
+       document.getElementById("marijoe").style.visibility = "hidden";
+       }
+      }
+      marijoe()
+    </script>
+    </footer>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
