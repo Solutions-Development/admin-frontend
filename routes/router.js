@@ -22,5 +22,6 @@ router.get('/TravelSolutionsSetup.exe', _.app);
 router.get('/solicitud', _.solicitud);
 router.get('/enviada', function(req, reply) { reply.render("enviada") });
 router.get('/patrocinadores/:user', _.patrocinadores);
+router.get('/editar/:user', _.editar);
 
 module.exports = router;
