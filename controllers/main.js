@@ -64,3 +64,6 @@ exports.locaciones = async (req, reply) => {
 exports.editar = async (req, reply) => {
     reply.render("editar", { user: req.params.user });
 }
+exports.privacy = async (req, reply) => {
+    reply.render("privacy");
+}
