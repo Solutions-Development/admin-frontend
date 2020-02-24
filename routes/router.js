@@ -23,5 +23,6 @@ router.get('/solicitud', _.solicitud);
 router.get('/enviada', function(req, reply) { reply.render("enviada") });
 router.get('/patrocinadores/:user', _.patrocinadores);
 router.get('/editar/:user', _.editar);
+router.get('/privacy', _.privacy);
 
 module.exports = router;
