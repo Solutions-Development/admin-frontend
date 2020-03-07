@@ -67,3 +67,6 @@ exports.editar = async (req, reply) => {
 exports.privacy = async (req, reply) => {
     reply.render("privacy");
 }
+exports.error = async (req, reply) => {
+    reply.render('login-error');
+}
